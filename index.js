@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const env = require('./env');
 
 const app = express();
 app.use(express.json());
@@ -9,10 +10,10 @@ const port = 3000;
 const Message = mongoose.model('Message', {message: String, date: Date});
 
 async function connect() {
-    return await mongoose.connect('mongodb://mongo:27017/admin', {
+    return await mongoose.connect(`mongodb://${env.dbHost}/admin`, {
         useNewUrlParser: true,
-        user: 'root',
-        pass: 'example'
+        user: env.user,
+        pass: env.pass,
     });
 }
 
