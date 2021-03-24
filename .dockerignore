@@ -1,0 +1,10 @@
+.idea/
+.git/
+.gitignore
+.dockerignore
+.editorconfig
+node_modules/
+move/
+Dockerfile
+docker-compose.yml
+README.md
